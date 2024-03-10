@@ -1,0 +1,9 @@
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/entity/Pelicula.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/entity/Usuario.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/entity/Genero.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/repository/IGeneroRepository.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/entity/ImagenPelicula.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/Integradorfase3Aplication.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/entity/Rol.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/repository/IPeliculaRepository.java
+/home/emma/Escritorio/bootcamp/integrador/local/src/main/java/com/bootcamp/repository/IUsuarioRepository.java
