@@ -36,6 +36,6 @@ public class Pelicula {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "imagen_id",referencedColumnName = "id",nullable = false)
 	private ImagenPelicula imagenPelicula;
-	@Column(name = "mayores_de_14", nullable = false)
-    private boolean aptaMayoresDe14;
+	@Column(name = "menores_de_14", nullable = false)
+    private boolean aptaMenoresDe14;
 }
