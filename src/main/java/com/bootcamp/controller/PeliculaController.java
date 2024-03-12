@@ -50,5 +50,3 @@ public class PeliculaController {
 		return ResponseEntity.ok(peliculas);
 	}
 }
-
-
