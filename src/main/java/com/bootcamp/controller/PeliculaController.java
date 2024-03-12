@@ -17,18 +17,18 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bootcamp.dto.PeliculaDTO;
 import com.bootcamp.dto.ResumenPeliculaDTO;
-// import com.bootcamp.service.GeneroService;
+import com.bootcamp.service.GeneroService;
 import com.bootcamp.service.PeliculaService;
 
 import jakarta.websocket.server.PathParam;
-import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("api/movies")
-@AllArgsConstructor
 public class PeliculaController {
-
+	@Autowired
 	private PeliculaService peliculaService;
+	@Autowired
+	private GeneroService generoService;
 	
 	@PostMapping(value = "/save",consumes = {MediaType.APPLICATION_JSON_VALUE,
 											 MediaType.MULTIPART_FORM_DATA_VALUE})
@@ -37,11 +37,18 @@ public class PeliculaController {
 		ResumenPeliculaDTO resumenPeliculaDTO = peliculaService.registrarPelicula(movie, files.get(0));
 		return new ResponseEntity<>(resumenPeliculaDTO,HttpStatus.CREATED);
 	}
-
-	@GetMapping("/findbynombre/{nombre}")
-	public ResponseEntity<List<PeliculaDTO>> buscarPorNombre(@PathVariable String nombre){
+	
+	@GetMapping("/findbytitle/{nombre}")
+	public ResponseEntity<List<PeliculaDTO>> buscarPorTitulo(@PathVariable String nombre){
 		List<PeliculaDTO> peliculas = peliculaService.buscarPorNombre(nombre);
 		return ResponseEntity.ok(peliculas);
 	}
+	
+	@GetMapping("/findbygenre/{genero}")
+	public ResponseEntity<List<PeliculaDTO>> buscarPorGenero(@PathVariable String genero){
+		List<PeliculaDTO> peliculas = generoService.obtenerPorGenero(genero);
+		return ResponseEntity.ok(peliculas);
+	}
 }
+
 
