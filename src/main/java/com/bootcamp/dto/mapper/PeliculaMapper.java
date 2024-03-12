@@ -48,25 +48,17 @@ public class PeliculaMapper {
 						g->g.getNombreGenero()).collect(Collectors.joining(" - "));
 		resumenPeliculaDTO.setStringGeneros(generosString);
 		return resumenPeliculaDTO;
-
-		// resumenPeliculaDTO.setNombreImagen(pelicula.getImagenPelicula().getNombreArchivo());
-		// String generosString = pelicula.getGeneros().stream().map(
-		// 					g->g.getNombreGenero()).collect(Collectors.joining(" - "));
-		// resumenPeliculaDTO.setStringGeneros(generosString);
-		// resumenPeliculaDTO.setTitulo(pelicula.getTitulo());
-		// resumenPeliculaDTO.setUrlWeb(pelicula.getUrlWeb());
-		// return resumenPeliculaDTO;
 	}
 	
-	// public PeliculaDTO peliculaToPeliculaDTO(Pelicula pelicula) {
-	// 	PeliculaDTO peliculaDTO = new PeliculaDTO();
-	// 	List<String> generosString = pelicula.getGeneros().stream()
-	// 					.map(g->g.getNombreGenero()).collect(Collectors.toList());
-	// 	peliculaDTO.setGeneros(generosString);
-	// 	peliculaDTO.setImagenPelicula(pelicula.getImagenPelicula().getImagen());
-	// 	peliculaDTO.setTitulo(pelicula.getTitulo());
-	// 	peliculaDTO.setUrlWeb(pelicula.getUrlWeb());
-	// 	return peliculaDTO;
-	// }
+	public PeliculaDTO peliculaToPeliculaDTO(Pelicula pelicula) {
+		PeliculaDTO peliculaDTO = new PeliculaDTO();
+		List<String> generosString = pelicula.getGeneros().stream()
+						.map(g->g.getNombreGenero()).collect(Collectors.toList());
+		peliculaDTO.setGeneros(generosString);
+		peliculaDTO.setImagenPelicula(pelicula.getImagenPelicula().getImagen());
+		peliculaDTO.setNombre(pelicula.getNombre());
+		peliculaDTO.setUrlWeb(pelicula.getUrlWeb());
+		return peliculaDTO;
+	}
 	
 }

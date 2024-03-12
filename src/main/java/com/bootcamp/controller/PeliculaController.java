@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bootcamp.dto.PeliculaDTO;
 import com.bootcamp.dto.ResumenPeliculaDTO;
+// import com.bootcamp.service.GeneroService;
 import com.bootcamp.service.PeliculaService;
 
 import jakarta.websocket.server.PathParam;
@@ -37,4 +38,10 @@ public class PeliculaController {
 		return new ResponseEntity<>(resumenPeliculaDTO,HttpStatus.CREATED);
 	}
 
+	@GetMapping("/findbynombre/{nombre}")
+	public ResponseEntity<List<PeliculaDTO>> buscarPorNombre(@PathVariable String nombre){
+		List<PeliculaDTO> peliculas = peliculaService.buscarPorNombre(nombre);
+		return ResponseEntity.ok(peliculas);
+	}
 }
+

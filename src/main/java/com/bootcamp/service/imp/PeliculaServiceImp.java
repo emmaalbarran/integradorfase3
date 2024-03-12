@@ -53,4 +53,18 @@ public class PeliculaServiceImp implements PeliculaService{
 		// TODO Auto-generated method stub
 		 return resumenPeliculaDTO;
 	}
+
+	@Override
+	public List<PeliculaDTO> buscarPorNombre(String nombre) {
+		List<Pelicula> peliculas = peliculaRepository.findByNombreContainingIgnoreCase(nombre);
+		System.out.println("el repository se lleva a cabo");
+		List<PeliculaDTO> peliculasDTO = peliculas.stream()
+				.map(p->{
+					PeliculaDTO peliculaDTO = peliculaMapper.peliculaToPeliculaDTO(p);
+					return peliculaDTO;
+				}).collect(Collectors.toList());
+				
+		return peliculasDTO;
+	}
+
 }

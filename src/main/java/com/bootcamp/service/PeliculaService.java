@@ -9,4 +9,5 @@ import com.bootcamp.dto.ResumenPeliculaDTO;
 
 public interface PeliculaService {
 	ResumenPeliculaDTO registrarPelicula(String movie, MultipartFile archivoImagen);
+	List<PeliculaDTO> buscarPorNombre(String nombre);
 }

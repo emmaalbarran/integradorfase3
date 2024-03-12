@@ -42,7 +42,6 @@ public class AltaPeliculaTest {
 		Pelicula pelicula = new Pelicula();
 		pelicula.setNombre("Duna");
 		pelicula.setUrlWeb("https://es.wikipedia.org/wiki/Dune_(pel%C3%ADcula_de_2021)");
-		pelicula.setAptaMenoresDe14(true);
 		List<Genero> generos = new ArrayList<>();
 		generos.add(genero1);
 		generos.add(genero2);
