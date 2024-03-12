@@ -9,5 +9,5 @@ import com.bootcamp.entity.Pelicula;
 
 @Repository
 public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
-	List<Pelicula> findByTituloContainingIgnoreCase(String titulo);
+    List<Pelicula> findByNombreContainingIgnoreCase(String nombre);
 }

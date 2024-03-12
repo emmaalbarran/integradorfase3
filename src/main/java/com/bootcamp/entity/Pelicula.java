@@ -25,7 +25,7 @@ public class Pelicula {
 	@Column(name = "id")
 	private Integer id;
 	@Column(name = "nombre",nullable = false,length = 150)
-	private String titulo;
+	private String nombre;
 	@Column(name = "urlweb",nullable = false)
 	private String urlWeb;
 	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.DETACH)
@@ -36,6 +36,4 @@ public class Pelicula {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "imagen_id",referencedColumnName = "id",nullable = false)
 	private ImagenPelicula imagenPelicula;
-	@Column(name = "menores_de_14", nullable = false)
-    private boolean aptaMenoresDe14;
 }
